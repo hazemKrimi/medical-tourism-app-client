@@ -4,13 +4,23 @@ import App from './App';
 import store from './store/store';
 import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
+import { extendTheme, ChakraProvider } from '@chakra-ui/react';
 import * as serviceWorker from './serviceWorker';
+
+const config = {
+	useSystemColorMode: true,
+	initialColorMode: 'dark'
+};
+
+const customTheme = extendTheme({ config });
 
 ReactDOM.render(
 	<React.StrictMode>
 		<Provider store={store}>
 			<BrowserRouter>
-				<App />
+				<ChakraProvider theme={customTheme}>
+					<App />
+				</ChakraProvider>
 			</BrowserRouter>
 		</Provider>
 	</React.StrictMode>,
