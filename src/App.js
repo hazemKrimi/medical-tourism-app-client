@@ -5,16 +5,16 @@ import Home from './pages/Home';
 import Landing from './pages/Landing';
 import Settings from './pages/Settings';
 import ProtectedRoute from './components/ProtectedRoute';
-import AuthRoute from './components/AuthRoute';
+import UnProtectedRoute from './components/UnProtectedRoute';
 
 const App = () => {
 	return (
 		<Container maxWidth='85%'>
 			<Nav />
 			<Switch>
-				<AuthRoute exact path='/'>
+				<UnProtectedRoute exact path='/'>
 					<Landing />
-				</AuthRoute>
+				</UnProtectedRoute>
 				<ProtectedRoute exact path='/home'>
 					<Home />
 				</ProtectedRoute>
