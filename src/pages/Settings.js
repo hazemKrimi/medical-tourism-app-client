@@ -55,8 +55,8 @@ const Settings = () => {
 			phone: user.phone,
 			address: user.address,
 			email: user.email,
-			newPassword: '',
-			confirmNewPassword: ''
+			newPassword: user.password,
+			confirmNewPassword: user.password
 		},
 		validationSchema: Yup.object().shape({
 			phone: Yup.number().required('Phone is required'),
