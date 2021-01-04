@@ -44,7 +44,7 @@ const Nav = () => {
 							<PlusSquareIcon w={6} h={6} />
 						</GridItem>
 						<GridItem>
-							<Text fontSize='md'>Heal Abroad</Text>
+							<Text fontSize='md'>Healer</Text>
 						</GridItem>
 					</Grid>
 					<Spacer />
