@@ -130,6 +130,54 @@ export const hotelSignup = (
 	}
 };
 
+export const getPatient = () => async (dispatch, getState) => {
+	try {
+		dispatch(unsetError());
+		dispatch(startLoading());
+		const { user } = getState();
+		const res = await fetch(`${process.env.REACT_APP_SERVER}/patient/${user.id}/`);
+		if (!res.ok) throw await res.json();
+		const data = await res.json();
+		dispatch(addUser({ type: 'patient', ...data }));
+		dispatch(stopLoading());
+	} catch (err) {
+		dispatch(stopLoading());
+		dispatch(setError(err.message));
+	}
+};
+
+export const getDoctor = () => async (dispatch, getState) => {
+	try {
+		dispatch(unsetError());
+		dispatch(startLoading());
+		const { user } = getState();
+		const res = await fetch(`${process.env.REACT_APP_SERVER}/doctor/${user.id}/`);
+		if (!res.ok) throw await res.json();
+		const data = await res.json();
+		dispatch(addUser({ type: 'patient', ...data }));
+		dispatch(stopLoading());
+	} catch (err) {
+		dispatch(stopLoading());
+		dispatch(setError(err.message));
+	}
+};
+
+export const getHotel = () => async (dispatch, getState) => {
+	try {
+		dispatch(unsetError());
+		dispatch(startLoading());
+		const { user } = getState();
+		const res = await fetch(`${process.env.REACT_APP_SERVER}/hotel/${user.id}/`);
+		if (!res.ok) throw await res.json();
+		const data = await res.json();
+		dispatch(addUser({ type: 'patient', ...data }));
+		dispatch(stopLoading());
+	} catch (err) {
+		dispatch(stopLoading());
+		dispatch(setError(err.message));
+	}
+};
+
 export const updatePatient = (
 	firstname,
 	lastname,
