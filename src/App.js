@@ -9,7 +9,7 @@ import UnProtectedRoute from './components/UnProtectedRoute';
 
 const App = () => {
 	return (
-		<Container maxWidth='85%'>
+		<Container maxWidth={['100%', '85%']}>
 			<Nav />
 			<Switch>
 				<UnProtectedRoute exact path='/'>
