@@ -57,7 +57,13 @@ const Nav = () => {
 						/>
 						{user ? (
 							<>
-								<Button variant='solid' onClick={() => history.push('/settings')}>
+								<Button
+									variant='solid'
+									onClick={() => window.location.replace(process.env.REACT_APP_LINK)}
+								>
+									Reserve
+								</Button>
+								<Button variant='outline' onClick={() => history.push('/settings')}>
 									Settings
 								</Button>
 								<Button
